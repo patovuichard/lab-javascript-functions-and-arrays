@@ -58,7 +58,36 @@ console.log(`3.1)`,sumNumbers(numbers))
 
 
 // Iteration #3.2 Bonus:
-function sum() {}
+
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+// should return: 57
+
+function sum(mix) {
+  if (mix.length === 0) {
+    return 0;
+  } else if (mix.length === 1) {
+    return mix[0];
+  }
+  let count1 = 0;
+  let count2 = 0;
+  let count3 = 0;
+  let count4 = 0;
+  for (let i=0; i<mix.length; i++) {
+    if (typeof mix[i] === "string") {
+      count1 += mix[i].length;
+    } else if (typeof mix[i] === "number") {
+      count2 += mix[i];
+    }else if (mix[i] === true) {
+      count3++
+    } else if (mix[i] === undefined || mix[i] === NaN) {
+      return `error`;
+    }
+  }
+  count4 = count1+count2+count3;
+  return count4;
+}
+sum(mixedArr);
+console.log(`3.2)`,sum(mixedArr));
 
 
 
@@ -100,7 +129,25 @@ console.log(`4.2)`,averageWordLength(wordsArr))
 
 
 // Bonus - Iteration #4.3
-function avg() {}
+const wordss = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+
+function avg(palabras) {
+  if (palabras.length === 0) {
+    return null;
+  }
+
+  let contador1 = 0;
+  let contador2 = 0;
+  for (let i=0; i<palabras.length; i++) {
+    if (typeof palabras[i] === "string") {
+      contador1 += palabras[i].length;
+    }
+  }
+  contador2 = contador1 / palabras.length;
+  return contador2;
+}
+avg(wordss);
+console.log(`4.3)`, avg(wordss))
 
 
 
@@ -221,7 +268,12 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() {}
+function greatestProduct() {
+  
+}
+
+
+
 
 
 
