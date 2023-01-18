@@ -123,25 +123,41 @@ function uniquifyArray(arreglo) {
   if (arreglo.length === 0) {
     return null;
   }
-  let aux = [arreglo[0]];
+  let aux1 = [];
   for (let i=0; i<arreglo.length; i++) {
-    for (j=(i+1); j< arreglo.length; j++) {
-      if (arreglo[i] !== arreglo[j]) {
-        aux[j] = arreglo[i];
-      }
+    if (aux1.includes(arreglo[i]) === false) {
+      aux1.push(arreglo[i])
     }
-    // console.log(aux)
-  }console.log(aux)
-  return aux;
+  }
+return aux1;
 }
 uniquifyArray(wordsUnique);
+console.log(`5)`,uniquifyArray(wordsUnique));
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(arrayOfWords, newWord) {
+  if (arrayOfWords.length === 0) {
+    return null;
+  }
+
+  let contar = 0;
+  for (i=0; i<arrayOfWords.length; i++) {
+    if (arrayOfWords[i] === newWord) {
+      contar++
+    }
+  }
+  if (contar === 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
+doesWordExist(wordsFind, `machine`);
+console.log(`6)`,doesWordExist(wordsFind,`machine`));
 
 
 
@@ -160,7 +176,24 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(arrWords, str) {
+  if (arrWords.length === 0) {
+    return 0;
+  }
+  let count = 0;
+  for (i=0; i<arrWords.length; i++) {
+    if (arrWords[i] === str) {
+      count++
+    }
+  }
+  if (count === 0) {
+    return 0;
+  } else {
+    return count;
+  }
+}
+howManyTimes(wordsCount,`matter`);
+console.log(`7)`,howManyTimes(wordsCount,`matter`))
 
 
 
